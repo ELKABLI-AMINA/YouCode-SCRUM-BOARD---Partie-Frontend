@@ -35,7 +35,7 @@ function afficher() {
         in_progress_tasks.innerHTML+=`
         <button class="w-100 bg-white border-0 border-bottom text-start p-10px d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal"   id="${tasks[index].Id}" onclick="modifier(this.id)">
         <div class="  col-1 fs-3 text-success">
-            <i class="fa-regular fa-circle-question"></i> 
+            <i class="fa-solid fa-rotate-right"></i> 
         </div>
         <div class="">
             <div class="h5">${tasks[index].title}</div>
