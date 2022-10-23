@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="utf-8" />
+	<title>YouCode | Scrum Board</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+	<link href="assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="assets/css/default/app.min.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+</head>
+<body>
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app-without-sidebar">
+		<!-- BEGIN #content -->
+		<div id="content" class="app-content main-style">
+			<div class="d-flex justify-content-between">
+				<div>
+					<ol class="d-flex breadcrumb">
+						<li class="breadcrumb-item"><a href="javascript:;">Home</a></li>
+						<li class="breadcrumb-item active">Scrum Board </li>
+					</ol>
+					<!-- BEGIN page-header -->
+					<h1 class="page-header">
+						Scrum Board 
+					</h1>
+					<!-- END page-header -->
+				</div>
+				
+				<div class="">
+					<button class="btn btn-primary rounded-pill"  data-bs-toggle="modal" data-bs-target="#exampleModal"  ><i class="fa-solid fa-plus"></i> Add Task</a>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12 col-md-4 mb-2">
+					<div class="card">
+						<div class="card-header  bg-black text-white">
+							<h4 class="card-title">To do (<span id="to_do_tasks_count"></span>)</h4>
+
+						</div>
+						<div class="" id="to_do_tasks">
+							<!-- TO DO TASKS HERE -->
+							<!-- <button class="w-100 bg-white border-0 border-bottom text-start p-10px d-flex">
+								<div class="  col-1 fs-3 text-success">
+									<i class="fa-regular fa-circle-question"></i> 
+								</div>
+								<div class="">
+									<div class="h5">Keep all the updated requirements in one place</div>
+									<div class="">
+										<div class=" text-gray">#1 created in 2022-10-08</div>
+										<div class=" text-black" title="There is hardly anything more frustrating than having to look for current requirements in tens of comments under the actual description or having to decide which commenter is actually authorized to change the requirements. The goal here is to keep all the up-to-date requirements and details in the main/primary description of a task. Even though the information in comments may affect initial criteria, just update this primary description accordingly.">There is hardly anything more frustrating than having t...</div>
+									</div>
+									<div class="">
+										<span class=" btn btn-primary btn-sm p-0 px-2 h6">High</span>
+										<span class=" btn btn-light btn-sm p-0  text text-black px-2 h6">Feature</span>
+									</div>
+								</div>
+							</button> -->
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 mb-2">
+					<div class="card">
+						<div class="card-header bg-black text-white">
+							<h4 class="card-title">In Progress (<span id="in_progress_tasks_count"></span>)</h4>
+
+						</div>
+						<div class="card-body p-0" id="in_progress_tasks">
+							<!-- IN PROGRESS TASKS HERE -->
+							<!-- <button class="w-100 border-0 bg-white border-bottom text-start p-10px  d-flex">
+								<div class="fs-3 col-1  text-success">
+									<i class="fa-solid fa-circle-notch"></i> 
+								</div>
+								<div class="">
+									<div class="h4">Describe steps to reproduce an issue</div>
+									<div class="">
+										<div class="text-gray">#6 created in 2022-10-08</div>
+										<div class="text-black" title="including as many details as possible.">including as many details as possible.</div>
+									</div>
+									<div class="">
+										<span class="btn btn-primary btn-sm p-0 px-2 h6">High</span>
+										<span class="btn btn-light btn-sm p-0 p text text-black px-2 h6">Bug</span>
+									</div>
+								</div>
+							</button> -->
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 mb-2">
+					<div class="card">
+						<div class="card-header bg-black text-white">
+							<h4 class="">Done (<span id="done_tasks_count"></span>)</h4>
+
+						</div>
+						<div class=" card-body p-0" id="done_tasks">
+							<!-- DONE TASKS HERE -->
+							<!-- <button class="w-100 border-0 border-bottom bg-white text-start p-10px d-flex">
+								<div class="fs-3 col-1  text-success">
+									<i class="fa-regular fa-circle-check"></i> 
+								</div>
+								<div class="">
+									<div class="h4">Provide access to logs</div>
+									<div class="">
+										<div class="text-gray">#10 created in 2022-10-08</div>
+										<div class="text-black" title="as they can be helpful in reproducing the steps that caused the problem in the first place.">as they can be helpful in reproducing the steps that ca...</div>
+									</div>
+									<div class="">
+										<span class=" btn btn-primary btn-sm p-0 px-2 h6">High</span>
+										<span class="btn btn-light btn-sm p-0 p text text-black px-2 h6">Bug</span>
+									</div>
+								</div>
+							</button> -->
+							
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END #content -->
+		
+		
+		<!-- BEGIN scroll-top-btn -->
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+		<!-- END scroll-top-btn -->
+	</div>
+	<!-- END #app -->
+	
+	<!-- TASK MODAL -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
+			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+			  <form id="form_modaal"> 
+				<div class="mb-3">
+				  <label for="recipient-name" class="col-form-label">Title:</label>
+				  <input type="text" class="form-control" id="Title">
+				</div>
+				<div class="mb-3">
+				  <label for="message-text" class="col-form-label">Type</label>
+				  <div class="my-1 mx-2">
+					<input class="form-check-input" type="radio" name="flexRadioDefault" id="Feature">
+					<label class="form-check-label" for="flexRadioDefault1">
+						Featured
+					</label>
+				  </div>
+				</div>
+				<div class="my-1 mx-2">
+					<input class="form-check-input" type="radio" name="flexRadioDefault" id="Bug">
+					<label class="form-check-label" for="flexRadioDefault1">
+						Bug 
+					</label>
+				</div>
+	
+				<div class="mb-3">
+					<label for="recipient-name" class="col-form-label">Preority</label>
+					<select class="form-select" aria-label="Default select example" id="Preority">
+						<option >Please Select</option>
+						<option value="High">High</option>
+						<option value="Low">Low</option>
+						<option value="Medium">Medium</option>
+						<option value="Critical">Critical</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="recipient-name" class="col-form-label">Status</label>
+					<select class="form-select" aria-label="Default select example" id="Status">
+						<option >Please Select</option>
+						<option value="To Do">To Do</option>
+						<option value='In Progress'>In Progress</option>
+						<option value="Done">Done</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="recipient-name" class="col-form-label">Date</label>
+					<input type="date"  class="form-control" id="date">
+				</div>
+				<div class="mb-3">
+					<label for="recipient-name" class="col-form-label">Description</label>
+					<Textarea class="form-control"  id="Description">
+
+					</Textarea>
+				</div>
+			  </form>
+			</div>
+			<div class="modal-footer" id="modal_footer">
+			  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			  <button type="button" class="btn btn-primary " onclick="ajouter()" data-bs-dismiss="modal" >Save</button>
+			  b
+			</div>
+		  </div>
+		</div>
+	  </div>
+	
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="assets/js/vendor.min.js"></script>
+	<script src="assets/js/app.min.js"></script>
+	<script src="assets/js/data.js"></script>
+	<script src="assets/js/page.js"></script>
+	<!-- ================== END core-js ================== -->
+	
+</body>
+</html>
