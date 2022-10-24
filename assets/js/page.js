@@ -10,66 +10,33 @@ function afficher() {
    
     for (let index = 0; index < tasks.length; index++) {
         const element = tasks[index]; 
-    
+        const btn = `
+            <button class="w-100 bg-white border-0 border-bottom text-start p-10px d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal"   id="${tasks[index].Id}" onclick="modifier(this.id)">
+            <div class="  col-1 fs-3 text-success">
+               <i class="${tasks[index].status=="To Do" ? 'fa-regular fa-circle-question' : (tasks[index].status=="In Progress") ? 'fa-solid fa-circle-notch' :'fa-regular fa-circle-check'}"></i>
+            </div>
+            <div class="">
+                <div class="h5">${tasks[index].title}</div>
+                <div class="">
+                    <div class=" text-gray">#${index+1} created in ${tasks[index].date}</div>
+                    <div class=" text-black" title="">${tasks[index].description.slice(0,60)}</div>
+                </div>
+                <div class="">
+                    <span class=" btn btn-primary btn-sm p-0 px-2 h6">${tasks[index].priority}</span>
+                    <span class=" btn btn-light btn-sm p-0  text text-black px-2 h6">${tasks[index].type}</span>
+                </div>
+            </div>
+            </button>`
     if(tasks[index].status== 'To Do'){
         to_do_count++;
-        to_do_tasks.innerHTML+=`
-        <button class="w-100 bg-white border-0 border-bottom text-start p-10px d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal"   id="${tasks[index].Id}" onclick="modifier(this.id)">
-        <div class="  col-1 fs-3 text-success">
-            <i class="fa-regular fa-circle-question"></i> 
-        </div>
-        <div class="">
-            <div class="h5">${tasks[index].title}</div>
-            <div class="">
-                <div class=" text-gray">#${index+1} created in ${tasks[index].date}</div>
-                <div class=" text-black" title="">${tasks[index].description.slice(0,60)}</div>
-            </div>
-            <div class="">
-                <span class=" btn btn-primary btn-sm p-0 px-2 h6">${tasks[index].priority}</span>
-                <span class=" btn btn-light btn-sm p-0  text text-black px-2 h6">${tasks[index].type}</span>
-            </div>
-        </div>
-    </button>`;
+        to_do_tasks.innerHTML+= btn;
     } else if(tasks[index].status== 'In Progress'){
         in_progress_count++;
-        in_progress_tasks.innerHTML+=`
-        <button class="w-100 bg-white border-0 border-bottom text-start p-10px d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal"   id="${tasks[index].Id}" onclick="modifier(this.id)">
-        <div class="  col-1 fs-3 text-success">
-            <i class="fa-solid fa-rotate-right"></i> 
-        </div>
-        <div class="">
-            <div class="h5">${tasks[index].title}</div>
-            <div class="">
-                <div class=" text-gray">#${index+1} created in ${tasks[index].date} </div>
-                <div class=" text-black" title="">${tasks[index].description.slice(0,60)}</div>
-            </div>
-            <div class="">
-                <span class=" btn btn-primary btn-sm p-0 px-2 h6">${tasks[index].priority}</span>
-                <span class=" btn btn-light btn-sm p-0  text text-black px-2 h6">${tasks[index].type}</span>
-            </div>
-        </div>
-    </button>` 
+        in_progress_tasks.innerHTML+= btn; 
 
     }else{
         done_count++;
-        done_tasks.innerHTML+=`
-        <button class="w-100 border-0 border-bottom bg-white text-start p-10px d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal"   id="${tasks[index].Id}" onclick="modifier(this.id)">
-								<div class="fs-3 col-1  text-success">
-									<i class="fa-regular fa-circle-check"></i> 
-								</div>
-								<div class="">
-									<div class="h4">${tasks[index].title}</div>
-									<div class="">
-										<div class="text-gray">#${index+1} created in ${tasks[index].date}</div>
-										<div class="text-black" title="">${tasks[index].description.slice(0,40)}</div>
-									</div>
-									<div class="">
-										<span class=" btn btn-primary btn-sm p-0 px-2 h6">${tasks[index].priority}</span>
-										<span class="btn btn-light btn-sm p-0 p text text-black px-2 h6">${tasks[index].type}</span>
-									</div>
-								</div>
-							</button>
-       `
+        done_tasks.innerHTML+= btn;
     }
  }
  to_do_tasks_count.innerHTML=to_do_count;
@@ -78,9 +45,11 @@ function afficher() {
 
 }
 afficher();
+ 
 
 
 function ajouter() {
+    
     let check
     if(Bug.checked==true){
         check='Bug'
@@ -144,6 +113,7 @@ function actualiser() {
         }
     
      }
+     
 }
 function supprimer() {
     for (let i= 0; i< tasks.length; i++) {
