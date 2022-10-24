@@ -1,4 +1,4 @@
- let conteur =7 // contient l'id de chaque bouton
+ let conteur =7 // contient l'id de chaque 
  let temp_Id
 function afficher() {
     let to_do_count=0;
