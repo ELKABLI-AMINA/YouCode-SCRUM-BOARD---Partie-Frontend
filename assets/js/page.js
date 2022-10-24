@@ -1,4 +1,4 @@
- let conteur =7 // contient l'id de chaque 
+ let compteur =7;
  let temp_Id
 function afficher() {
     let to_do_count=0;
@@ -9,8 +9,7 @@ function afficher() {
     done_tasks.innerHTML=``
    
     for (let index = 0; index < tasks.length; index++) {
-        const element = tasks[index]; 
-        const btn = `
+        let btn = `
             <button class="w-100 bg-white border-0 border-bottom text-start p-10px d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal"   id="${tasks[index].Id}" onclick="modifier(this.id)">
             <div class="  col-1 fs-3 text-success">
                <i class="${tasks[index].status=="To Do" ? 'fa-regular fa-circle-question' : (tasks[index].status=="In Progress") ? 'fa-solid fa-circle-notch' :'fa-regular fa-circle-check'}"></i>
@@ -57,11 +56,11 @@ function ajouter() {
         check='Feature'
     }
    const task= { // création d'un objet task
-    'title'    : Title.value,
-    'type'     : check,
-    'priority' : Preority.value,
-    'status'   : Status.value,
-    'date'     : date.value,
+    'title'      : Title.value,
+    'type'       : check,
+    'priority'   : Preority.value,
+    'status'     : Status.value,
+    'date'       : date.value,
     'description': Description.value,
     'Id'         : conteur,
    }
@@ -72,7 +71,6 @@ function ajouter() {
 function modifier(Id) {
   for (let i= 0; i< tasks.length; i++) {
    if(Id==tasks[i].Id){
-    console.log(tasks[i].Id)
     temp_Id=Id
     if(tasks[i].type=='Bug'){
         Bug.checked=true
@@ -91,7 +89,7 @@ function modifier(Id) {
    `;
      
     }  
- }
+  }
  
 }
 function actualiser() {

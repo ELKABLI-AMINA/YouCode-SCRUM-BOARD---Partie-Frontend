@@ -9,7 +9,7 @@ var tasks = [
         'status'        :   'To Do',
         'date'          :   '2022-10-08',
         'description'   :   `There is hardly anything more frustrating than having to look for current requirements in tens of comments under the actual description or having to decide which commenter is actually authorized to change the requirements. The goal here is to keep all the up-to-date requirements and details in the main/primary description of a task. Even though the information in comments may affect initial criteria, just update this primary description accordingly.`,
-        'Id'            :    '1', // on a ajouter Id pour qu'on l'utilise dans edit et delete
+        'Id'            :    '1', 
     },
     {
         'title'         :   'Consider creating an acceptance criteria list',
