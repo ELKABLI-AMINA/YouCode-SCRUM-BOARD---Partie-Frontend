@@ -10,7 +10,7 @@ function afficher() {
    
     for (let index = 0; index < tasks.length; index++) {
         let btn = `
-            <button class="w-100 bg-white border-0 border-bottom text-start p-10px d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal"   id="${tasks[index].Id}" onclick="modifier(this.id)">
+            <button class="w-100 bg-white border-0 border-bottom text-start p-10px d-flex" data-bs-toggle="modal" data-bs-target="#exampleModal"   id="${tasks[index].Id}" onclick="modifier(this.id)" onmouseover="${tasks[index].status=='To Do' ? 'todo_color()' : (tasks[index].status=='In Progress') ? 'in_progress_color()' :'done_color()'}" onmouseout="${tasks[index].status=='To Do' ? 'todo_incolor()' : (tasks[index].status=='In Progress') ? 'in_progress_incolor()' :'done_incolor()'}">
             <div class="  col-1 fs-3 text-success">
                <i class="${tasks[index].status=="To Do" ? 'fa-regular fa-circle-question' : (tasks[index].status=="In Progress") ? 'fa-solid fa-circle-notch' :'fa-regular fa-circle-check'}"></i>
             </div>
@@ -120,4 +120,25 @@ function supprimer() {
         }
     }
   afficher();
+}
+
+
+function todo_color(){
+    todo_header.style.backgroundColor="red";
+}
+function in_progress_color(){
+    in_progress_header.style.backgroundColor="blue";
+}
+function done_color(){
+    done_header.style.backgroundColor="green";
+
+}
+function todo_incolor(){
+    todo_header.style.backgroundColor="black";
+}
+function in_progress_incolor(){
+    in_progress_header.style.backgroundColor="black";
+}
+function done_incolor(){
+    done_header.style.backgroundColor="black";
 }

@@ -41,8 +41,8 @@
 			<div class="row">
 				<div class="col-12 col-md-4 mb-2">
 					<div class="card">
-						<div class="card-header  bg-black text-white">
-							<h4 class="card-title">To do (<span id="to_do_tasks_count"></span>)</h4>
+						<div class="card-header   text-white" id="todo_header" style="background-color: black;">
+							<h4 class="card-title ">To do (<span id="to_do_tasks_count"></span>)</h4>
 
 						</div>
 						<div class="" id="to_do_tasks">
@@ -69,7 +69,7 @@
 				</div>
 				<div class="col-12 col-md-4 mb-2">
 					<div class="card">
-						<div class="card-header bg-black text-white">
+						<div class="card-header  text-white" id="in_progress_header" style="background-color: black;">
 							<h4 class="card-title">In Progress (<span id="in_progress_tasks_count"></span>)</h4>
 
 						</div>
@@ -97,7 +97,7 @@
 				</div>
 				<div class="col-12 col-md-4 mb-2">
 					<div class="card">
-						<div class="card-header bg-black text-white">
+						<div class="card-header  text-white" id="done_header" style="background-color: black;">
 							<h4 class="">Done (<span id="done_tasks_count"></span>)</h4>
 
 						</div>
@@ -145,7 +145,7 @@
 			  <form id="form_modaal"> 
 				<div class="mb-3">
 				  <label for="recipient-name" class="col-form-label">Title:</label>
-				  <input type="text" class="form-control" id="Title" size="60" minlength="3" maxlength="60">
+				  <input type="text" class="form-control" id="Title" size="60"  maxlength='60'>
 				</div>
 				<div class="mb-3">
 				  <label for="message-text" class="col-form-label">Type</label>
