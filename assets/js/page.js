@@ -62,7 +62,7 @@ function ajouter() {
     'status'     : Status.value,
     'date'       : date.value,
     'description': Description.value,
-    'Id'         : conteur,
+    'Id'         : compteur,
    }
    tasks.push(task);
    afficher();
