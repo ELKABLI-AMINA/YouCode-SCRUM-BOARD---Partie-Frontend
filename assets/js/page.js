@@ -69,7 +69,7 @@ function ajouter() {
    form_modaal.reset()
 }
 function modifier(Id) {
-  for (let i= 0; i< tasks.length; i++) {
+  for (let i= 0; i< tasks.length; i++)      {
    if(Id==tasks[i].Id){
     temp_Id=Id
     if(tasks[i].type=='Bug'){
@@ -90,6 +90,7 @@ function modifier(Id) {
      
     }  
   }
+  
  
 }
 function actualiser() {
